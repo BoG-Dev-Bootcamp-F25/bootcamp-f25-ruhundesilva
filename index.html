@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ruhun De silva — Bits of Good Card</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <div class="card" aria-label="Personal profile card">
+        <!-- The element that flips -->
+        <div
+          class="card-inner"
+          id="profileCard"
+          tabindex="0"
+          aria-live="polite"
+        >
+          <!-- FRONT -->
+          <section class="face front">
+            <header>
+              <img
+                class="avatar-image"
+                src="images/Ruhun_De_Silva_Composite.JPG"
+                alt="Photo of Ruhun De silva"
+              />
+              <div class="title">
+                <div class="name">Ruhun De silva</div>
+                <div class="meta">CS @ Georgia Tech • Class of 2027</div>
+              </div>
+            </header>
+
+            <main class="content">
+              <span class="chip" id="passionText"
+                >Passion: Tech for Racial Equality</span
+              >
+
+              <ul class="info-list">
+                <li>
+                  <span class="key">Major</span><span>Computer Science</span>
+                </li>
+                <li><span class="key">Year</span><span>3rd Year</span></li>
+                <li>
+                  <span class="key">From</span
+                  ><span>Newcastle-under-Lyme, United Kingdom</span>
+                </li>
+              </ul>
+            </main>
+
+            <footer>
+              <div class="button-row">
+                <button
+                  class="button"
+                  id="flipCardButton"
+                  aria-pressed="false"
+                  title="Flip the card"
+                >
+                  Flip Card
+                </button>
+                <button
+                  class="button secondary"
+                  id="themeToggleButton"
+                  title="Toggle light/dark mode"
+                >
+                  Dark/Light Mode
+                </button>
+                <button
+                  class="button secondary"
+                  id="accentShuffleButton"
+                  title="Shuffle accent color"
+                >
+                  Shuffle Color
+                </button>
+              </div>
+              <small class="hint">Press Card to Flip</small>
+            </footer>
+          </section>
+
+          <!-- BACK -->
+          <section class="face back">
+            <header>
+              <img
+                class="avatar-image"
+                src="images/Ruhun_De_Silva_Composite.JPG"
+                alt=""
+              />
+              <div class="title">
+                <div class="name">About Me</div>
+                <div class="meta">Why I Chose Bits of Good?</div>
+              </div>
+            </header>
+
+            <main class="content">
+              <p class="about-text">
+                My parents, as activists, valued making a difference over money
+                or fame. I've raised £4k playing 100 holes of golf and
+                volunteered at events like the St. Jude's 5K. Still, I feel my
+                degree and projects haven't yet created the impact they hoped
+                for. Through this bootcamp, I want to change that by building
+                projects that truly help people.
+              </p>
+
+              <span class="chip" id="funFactText"
+                >Fun fact: I can solve a 3×3 Rubik's cube in under a
+                minute.</span
+              >
+
+              <div class="link-row">
+                <a class="link" href="#" id="copyEmailButton">Copy Email</a>
+                <a
+                  class="link"
+                  href="https://www.instagram.com/ruhundesilva/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Instagram</a
+                >
+                <a
+                  class="link"
+                  href="https://www.linkedin.com/in/ruhun-de-silva"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >LinkedIn</a
+                >
+              </div>
+            </main>
+
+            <footer>
+              <button class="button" id="flipBackButton">Back</button>
+              <button class="button secondary" id="newFunFactButton">
+                New Fun Fact
+              </button>
+            </footer>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+:root {
+  --card-background-color: #121318;
+  --text-color: #eaf0f6;
+  --muted-text-color: #a3adba;
+  --highlight-color: hsl(210 100% 60%);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --card-corner-radius: 18px;
+  --flip-duration: 0.8s;
+}
+
+html[data-theme="light"] {
+  --card-background-color: #fdf6e3;
+  --text-color: #0c1222;
+  --muted-text-color: #475063;
+  --highlight-color: hsl(210 100% 50%);
+  --card-shadow: 0 12px 30px rgba(9, 15, 30, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  color: var(--text-color);
+  background: #0b0c10;
+  padding: 24px;
+}
+
+html[data-theme="light"] body {
+  background: #ffffff;
+}
+
+.page-wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  width: min(680px, 95vw);
+  perspective: 1600px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  transform-style: preserve-3d;
+  transition: transform var(--flip-duration) cubic-bezier(0.2, 0.7, 0.1, 1);
+  border-radius: var(--card-corner-radius);
+  box-shadow: var(--card-shadow);
+}
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  padding: clamp(18px, 3vw, 28px);
+  background: var(--card-background-color);
+  border: 1px solid color-mix(in oklab, var(--text-color) 10%, transparent);
+  border-radius: var(--card-corner-radius);
+  backface-visibility: hidden;
+}
+.face.back {
+  transform: rotateY(180deg);
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.avatar-image {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 14px
+    color-mix(in oklab, var(--highlight-color) 30%, transparent);
+  border: 3px solid color-mix(in oklab, var(--highlight-color) 40%, transparent);
+}
+
+.title {
+  line-height: 1.2;
+}
+.name {
+  font-size: clamp(22px, 4vw, 28px);
+  font-weight: 800;
+}
+.meta {
+  color: var(--muted-text-color);
+}
+
+.content {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.chip {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--highlight-color) 12%, transparent);
+  color: color-mix(in oklab, var(--highlight-color) 80%, var(--text-color));
+  border: 1px solid color-mix(in oklab, var(--highlight-color) 25%, transparent);
+  width: max-content;
+}
+
+.info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.info-list li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+}
+.info-list .key {
+  color: var(--muted-text-color);
+}
+
+.about-text {
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.link-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.link {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in oklab, var(--text-color) 25%, transparent);
+  color: var(--text-color);
+  text-decoration: none;
+}
+.link:hover {
+  border-style: solid;
+}
+
+footer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.hint {
+  color: var(--muted-text-color);
+}
+
+.button {
+  border: 0;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  background: color-mix(
+    in oklab,
+    var(--highlight-color) 18%,
+    var(--card-background-color)
+  );
+  color: var(--text-color);
+  border: 1px solid color-mix(in oklab, var(--highlight-color) 30%, transparent);
+  box-shadow: 0 4px 10px
+    color-mix(in oklab, var(--highlight-color) 20%, transparent);
+  transition: transform 0.12s ease, filter 0.2s ease;
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button:active {
+  transform: scale(0.98);
+}
+.button.secondary {
+  background: transparent;
+  border-color: color-mix(in oklab, var(--text-color) 18%, transparent);
+}
