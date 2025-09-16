@@ -117,53 +117,13 @@ body {
   align-items: row;
 }
 
-.leftSide {
-  width: 65vw;
-  height: 91.5vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
 .aboutMe {
-  width: 50vw;
-  height: 15vh;
-  margin: 15px;
-  padding: 15px;
-  border: 4px solid cyan;
-  border-radius: 10%;
+  width: 60vw;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .pictureThing {
   width: 40vw;
-  height: 91.5vh;
-  padding: 10px;
-}
-
-.pictureAndDescription {
-  width: auto;
-  height: 75%;
-  background-color: brown;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.pictureAndDescription p {
-  width: 75%;
-  max-width: 430px;
-  border: 3px dotted black;
-  padding: 3px;
-}
-
-.aboutMePhoto {
-  width: 90%;
-  max-width: 430px;
 }
