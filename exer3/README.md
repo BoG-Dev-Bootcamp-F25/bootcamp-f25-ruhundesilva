@@ -50,3 +50,5 @@ By now, you should have a forked version of this repository locally cloned on yo
 **Figma Page 2:**
 
 <img width="500" alt="Screenshot 2023-09-04 at 6 08 28 PM" src="https://github.com/BoG-Dev-Bootcamp-F23/bootcamp-f23/assets/8647920/075d3fba-b5f3-4475-8dd2-ba42df3758a9">
+
+**Video link: https://youtu.be/6SNOQ6GCtac**
