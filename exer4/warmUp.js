@@ -106,7 +106,7 @@ function combineObjects(object1, object2) {
 function reverseArr(array) {
   let reversed = [];
   for (let index = array.length - 1; index >= 0; index--) {
-    reversed.push([array[index]]);
+    reversed.push(array[index]);
   }
   return reversed;
 }
