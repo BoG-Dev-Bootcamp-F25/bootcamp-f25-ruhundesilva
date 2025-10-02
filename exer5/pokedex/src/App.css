@@ -194,3 +194,7 @@ h1 {
   min-height: 260px;
   border-radius: 8px;
 }
+
+.panel-body.moves {
+  overflow: auto;
+}

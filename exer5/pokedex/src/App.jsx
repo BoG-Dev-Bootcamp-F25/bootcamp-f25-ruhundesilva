@@ -4,6 +4,7 @@ import Nav from "./components/Nav.jsx";
 import TypeBadge from "./components/TypeBadge.jsx";
 import ToggleBar from "./components/ToggleBar.jsx";
 import InfoPanel from "./components/InfoPanel.jsx";
+import MovesPanel from "./components/MovesPanel.jsx";
 
 const API = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -78,10 +79,7 @@ function App() {
             {mode === "info" ? (
               <InfoPanel pokemon={pokemon} />
             ) : (
-              <div className="panel">
-                <h3>Moves</h3>
-                <div className="panel-body">Moves view</div>
-              </div>
+              <MovesPanel pokemon={pokemon} /> // ← NEW
             )}
           </div>
 
