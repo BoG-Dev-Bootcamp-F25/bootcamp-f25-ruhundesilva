@@ -30,11 +30,29 @@ function App() {
   const prev = () => setDexId((n) => Math.max(1, n - 1));
   const next = () => setDexId((n) => n + 1);
 
+  const imageUrl =
+    pokemon?.sprites?.other?.["official-artwork"]?.front_default ??
+    pokemon?.sprites?.other?.dream_world?.front_default ??
+    pokemon?.sprites?.other?.home?.front_default ??
+    pokemon?.sprites?.front_default ??
+    "";
+
   return (
     <div className="wrap">
       <h1>Exercise 5 - PokeDex!</h1>
       <div className="content">
         <div className="left">
+          <div className="sprite-box">
+            {status === "loading" ? (
+              <div className="loading">Loading…</div>
+            ) : status === "error" ? (
+              <div className="error">Not found</div>
+            ) : imageUrl ? (
+              <img src={imageUrl} alt={pokemon?.name || `pokemon #${dexId}`} />
+            ) : (
+              <div className="loading">—</div>
+            )}
+          </div>
           <div className="status">Status: {status}</div>
           <div>Dex ID: {dexId}</div>
 
