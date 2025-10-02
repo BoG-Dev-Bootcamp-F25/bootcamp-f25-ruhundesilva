@@ -3,6 +3,7 @@ import "./App.css";
 import Nav from "./components/Nav.jsx";
 import TypeBadge from "./components/TypeBadge.jsx";
 import ToggleBar from "./components/ToggleBar.jsx";
+import InfoPanel from "./components/InfoPanel.jsx";
 
 const API = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -74,13 +75,16 @@ function App() {
         </div>
         <div className="right">
           <div className="panel-area">
-            <div className="panel">
-              <h3>{mode === "info" ? "Info" : "Moves"}</h3>
-              <div className="panel-body">
-                {mode === "info" ? "Info" : "Moves"}
+            {mode === "info" ? (
+              <InfoPanel pokemon={pokemon} />
+            ) : (
+              <div className="panel">
+                <h3>Moves</h3>
+                <div className="panel-body">Moves view</div>
               </div>
-            </div>
+            )}
           </div>
+
           <div className="toggle-row">
             <ToggleBar mode={mode} setMode={setMode} />
           </div>
