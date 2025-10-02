@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Nav from "./components/Nav.jsx";
+import TypeBadge from "./components/TypeBadge.jsx";
 
 const API = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -37,6 +38,8 @@ function App() {
     pokemon?.sprites?.front_default ??
     "";
 
+  const types = pokemon ? pokemon.types.map((t) => t.type.name) : [];
+
   return (
     <div className="wrap">
       <h1>Exercise 5 - PokeDex!</h1>
@@ -54,6 +57,14 @@ function App() {
             )}
           </div>
           <div className="name-plate">{pokemon ? pokemon.name : "-"}</div>
+          <div className="types">
+            <div className="types-label">Types:</div>
+            <div className="types-row">
+              {types.length === 0
+                ? "—"
+                : types.map((t) => <TypeBadge key={t} typeName={t} />)}
+            </div>
+          </div>
           <div className="status">Status: {status}</div>
           <div>Dex ID: {dexId}</div>
 
