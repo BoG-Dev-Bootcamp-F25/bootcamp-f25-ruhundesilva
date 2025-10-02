@@ -80,4 +80,19 @@ h1 {
   image-rendering: pixelated;
 }
 
-.loading, .error { color: #666; }
+.loading,
+.error {
+  color: #666;
+}
+
+.name-plate {
+  width: 260px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  text-align: center;
+  padding: 9px 12px;
+  background: #eee;
+  text-transform: lowercase; /* matches mock vibe */
+  font-size: 15px;
+  margin-top: 10px;
+}

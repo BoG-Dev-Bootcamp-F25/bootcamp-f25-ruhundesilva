@@ -53,6 +53,7 @@ function App() {
               <div className="loading">—</div>
             )}
           </div>
+          <div className="name-plate">{pokemon ? pokemon.name : "-"}</div>
           <div className="status">Status: {status}</div>
           <div>Dex ID: {dexId}</div>
 
