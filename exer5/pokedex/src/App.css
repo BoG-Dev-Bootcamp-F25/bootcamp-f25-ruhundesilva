@@ -41,3 +41,24 @@ h1 {
   padding: 12px;
   border-radius: 8px;
 }
+
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.nav button {
+  width: 52px;
+  height: 38px;
+  border-radius: 8px;
+  border: 0;
+  background: #eeeeee;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.nav button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import Nav from "./components/Nav.jsx";
 
 const API = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -9,33 +10,25 @@ function App() {
   const [status, setStatus] = useState("idle");
 
   useEffect(() => {
-    let cancelled = false;
-
     async function load() {
       try {
         setStatus("loading");
         const url = `${API}${dexId}`;
         const res = await fetch(url);
-
         if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
         const json = await res.json();
-        if (!cancelled) {
-          setPokemon(json);
-          setStatus("idle");
-        }
+        setPokemon(json);
+        setStatus("idle");
       } catch (e) {
-        if (!cancelled) {
-          setPokemon(null);
-          setStatus("error");
-        }
+        setPokemon(null);
+        setStatus("error");
       }
     }
-
     load();
-    return () => {
-      cancelled = true;
-    };
   }, [dexId]);
+
+  const prev = () => setDexId((n) => Math.max(1, n - 1));
+  const next = () => setDexId((n) => n + 1);
 
   return (
     <div className="wrap">
@@ -44,6 +37,8 @@ function App() {
         <div className="left">
           <div className="status">Status: {status}</div>
           <div>Dex ID: {dexId}</div>
+
+          <Nav onPrev={prev} onNext={next} disabledPrev={dexId <= 1}></Nav>
         </div>
         <div className="right">
           <pre className="debug">
