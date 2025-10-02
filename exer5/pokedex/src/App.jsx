@@ -69,8 +69,6 @@ function App() {
                 : types.map((t) => <TypeBadge key={t} typeName={t} />)}
             </div>
           </div>
-          <div className="status">Status: {status}</div>
-          <div>Dex ID: {dexId}</div>
 
           <Nav onPrev={prev} onNext={next} disabledPrev={dexId <= 1}></Nav>
         </div>
